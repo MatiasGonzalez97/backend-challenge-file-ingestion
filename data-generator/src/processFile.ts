@@ -5,6 +5,7 @@ import readline from 'readline';
 import mssql from 'mssql';
 import sqlConfig from './config/sqlConfig';
 import isValidDate from './helpers/dateHelper';
+import logMetrics from './helpers/metricHelper';
 
 const BATCH_SIZE = 50;
 
@@ -72,8 +73,10 @@ async function processFile(filePath: string) {
     batch.push(parsedRow);
     if (batch.length >= BATCH_SIZE) {
       await sendBatch();
+      logMetrics();
     }
     await sendBatch();
+    logMetrics();
   }
 
   await connection.close();
