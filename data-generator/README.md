@@ -15,3 +15,5 @@ con la cantidad de registros y fallos aproximados con los que se quiera hacer la
 5) Por consola se pueden ver los logs de las lineas con error que hubo mientras se procesa el archivo y la cantidad de memoria utilizada, al finalizar el procesado también muestra las lineas con error encontradas
 
 6) Se expuso un EP en la URL: GET = localhost:3000/health para poder verificar el funcionamiento del sistema mientras se procesa el archivo
+
+7) La tabla CLIENTES se genera automaticamente al iniciar el servicio
